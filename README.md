@@ -1,10 +1,3 @@
-GitHub Markdown supports LaTeX math rendering **only through GitHub's math rendering feature** which is enabled by wrapping equations in `$$` or `$`. However, this requires:
-
-1. **Using `$$` for block equations** or `$` for inline
-2. **GitHub's Markdown processor must support it** (it does for most repositories)
-
-Here's the corrected version with proper GitHub Markdown math formatting:
-
 ---
 
 # Logistic Regression from Scratch in Python
@@ -48,50 +41,6 @@ $$
 $$
 \sigma'(z) = \sigma(z)(1 - \sigma(z))
 $$
-
----
-
-**Alternative (if GitHub doesn't render the LaTeX):**
-
-If GitHub doesn't render the math properly, you can use plain text with Unicode characters:
-
-## 📖 Theory Summary
-
-### 1. Hypothesis (Sigmoid Function)
-```
-h_θ(x) = σ(z) = 1 / (1 + e^(-z))
-where z = θᵀx
-```
-
-### 2. Cost Function (Log Loss)
-```
-J(θ) = -(1/m) * Σ [ yᵢ log(h_θ(xᵢ)) + (1 − yᵢ) log(1 − h_θ(xᵢ)) ]
-```
-
-### 3. Gradient Descent Update Rule
-```
-θⱼ := θⱼ − α * ∂J(θ)/∂θⱼ
-```
-
-### 4. Gradient Derivative
-```
-∂J(θ)/∂θⱼ = (1/m) * Σ (h_θ(xᵢ) − yᵢ) * xᵢⱼ
-```
-
-### 5. Vectorized Update Formula
-```
-θ := θ − α * (1/m) * Xᵀ (h − y)
-```
-
-### 6. Learning Rate
-```
-0 < α ≤ 1  (Typical values: 0.01, 0.001, 0.1)
-```
-
-### 7. Sigmoid Derivative
-```
-σ′(z) = σ(z)(1 − σ(z))
-```
 
 ---
 
@@ -160,7 +109,7 @@ Output: The person is diabetic
 
 ## 📝 Files
 - `logistic_regression_from_scratch.py` – Main implementation
-- `diabetes.csv` – Dataset (not included in repo, download from [Kaggle](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database))
+- `diabetes.csv` – Dataset (included in repo, download from [Kaggle](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database))
 - `README.md` – This file
 
 ---
