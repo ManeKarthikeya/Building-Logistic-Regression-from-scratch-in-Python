@@ -1,3 +1,12 @@
+GitHub Markdown supports LaTeX math rendering **only through GitHub's math rendering feature** which is enabled by wrapping equations in `$$` or `$`. However, this requires:
+
+1. **Using `$$` for block equations** or `$` for inline
+2. **GitHub's Markdown processor must support it** (it does for most repositories)
+
+Here's the corrected version with proper GitHub Markdown math formatting:
+
+---
+
 # Logistic Regression from Scratch in Python
 
 ## 📌 Overview
@@ -5,306 +14,84 @@ This project implements a **Logistic Regression classifier from scratch** using 
 
 ## 📖 Theory Summary
 
-1. Hypothesis (Sigmoid Function)
-h
-θ
-(
-x
-)
-=
-σ
-(
-z
-)
-=
-1
-1
-+
-e
-−
-z
-,
-z
-=
-θ
-T
-x
-h 
-θ
-​
- (x)=σ(z)= 
-1+e 
-−z
- 
-1
-​
- ,z=θ 
-T
- x
-2. Cost Function (Log Loss)
-J
-(
-θ
-)
-=
-−
-1
-m
-∑
-i
-=
-1
-m
-[
-y
-i
-log
-⁡
-(
-h
-θ
-(
-x
-i
-)
-)
-+
-(
-1
-−
-y
-i
-)
-log
-⁡
-(
-1
-−
-h
-θ
-(
-x
-i
-)
-)
-]
-J(θ)=− 
-m
-1
-​
-  
-i=1
-∑
-m
-​
- [y 
-i
-​
- log(h 
-θ
-​
- (x 
-i
-​
- ))+(1−y 
-i
-​
- )log(1−h 
-θ
-​
- (x 
-i
-​
- ))]
-3. Gradient Descent Update Rule
-θ
-j
-:
-=
-θ
-j
-−
-α
-⋅
-∂
-J
-(
-θ
-)
-∂
-θ
-j
-θ 
-j
-​
- :=θ 
-j
-​
- −α⋅ 
-∂θ 
-j
-​
- 
-∂J(θ)
-​
- 
-4. Gradient Derivative
-∂
-J
-(
-θ
-)
-∂
-θ
-j
-=
-1
-m
-∑
-i
-=
-1
-m
-(
-h
-θ
-(
-x
-i
-)
-−
-y
-i
-)
-⋅
-x
-i
-j
-∂θ 
-j
-​
- 
-∂J(θ)
-​
- = 
-m
-1
-​
-  
-i=1
-∑
-m
-​
- (h 
-θ
-​
- (x 
-i
-​
- )−y 
-i
-​
- )⋅x 
-ij
-​
- 
-5. Vectorized Update Formula
-θ
-:
-=
-θ
-−
-α
-⋅
-1
-m
-⋅
-X
-T
-(
-h
-−
-y
-)
-θ:=θ−α⋅ 
-m
-1
-​
- ⋅X 
-T
- (h−y)
-6. Learning Rate
-0
-<
-α
-≤
-1
-(
-Typical values: 
-0.01
-,
-0.001
-,
-0.1
-)
-0<α≤1(Typical values: 0.01,0.001,0.1)
-7. Sigmoid Derivative
-σ
-′
-(
-z
-)
-=
-σ
-(
-z
-)
-(
-1
-−
-σ
-(
-z
-)
-)
-σ 
-′
- (z)=σ(z)(1−σ(z))
-
 ### 1. Hypothesis (Sigmoid Function)
-\[
+$$
 h_\theta(x) = \sigma(z) = \frac{1}{1 + e^{-z}}, \quad z = \theta^T x
-\]
+$$
 
 ### 2. Cost Function (Log Loss)
-\[
+$$
 J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y_i \log(h_\theta(x_i)) + (1 - y_i) \log(1 - h_\theta(x_i)) \right]
-\]
+$$
 
 ### 3. Gradient Descent Update Rule
-\[
+$$
 \theta_j := \theta_j - \alpha \cdot \frac{\partial J(\theta)}{\partial \theta_j}
-\]
+$$
 
 ### 4. Gradient Derivative
-\[
+$$
 \frac{\partial J(\theta)}{\partial \theta_j} = \frac{1}{m} \sum_{i=1}^{m} (h_\theta(x_i) - y_i) \cdot x_{ij}
-\]
+$$
 
 ### 5. Vectorized Update Formula
-\[
+$$
 \theta := \theta - \alpha \cdot \frac{1}{m} \cdot X^T (h - y)
-\]
+$$
 
 ### 6. Learning Rate
-\[
+$$
 0 < \alpha \le 1 \quad (\text{Typical values: } 0.01, 0.001, 0.1)
-\]
+$$
 
 ### 7. Sigmoid Derivative
-\[
+$$
 \sigma'(z) = \sigma(z)(1 - \sigma(z))
-\]
+$$
+
+---
+
+**Alternative (if GitHub doesn't render the LaTeX):**
+
+If GitHub doesn't render the math properly, you can use plain text with Unicode characters:
+
+## 📖 Theory Summary
+
+### 1. Hypothesis (Sigmoid Function)
+```
+h_θ(x) = σ(z) = 1 / (1 + e^(-z))
+where z = θᵀx
+```
+
+### 2. Cost Function (Log Loss)
+```
+J(θ) = -(1/m) * Σ [ yᵢ log(h_θ(xᵢ)) + (1 − yᵢ) log(1 − h_θ(xᵢ)) ]
+```
+
+### 3. Gradient Descent Update Rule
+```
+θⱼ := θⱼ − α * ∂J(θ)/∂θⱼ
+```
+
+### 4. Gradient Derivative
+```
+∂J(θ)/∂θⱼ = (1/m) * Σ (h_θ(xᵢ) − yᵢ) * xᵢⱼ
+```
+
+### 5. Vectorized Update Formula
+```
+θ := θ − α * (1/m) * Xᵀ (h − y)
+```
+
+### 6. Learning Rate
+```
+0 < α ≤ 1  (Typical values: 0.01, 0.001, 0.1)
+```
+
+### 7. Sigmoid Derivative
+```
+σ′(z) = σ(z)(1 − σ(z))
+```
 
 ---
 
@@ -373,7 +160,7 @@ Output: The person is diabetic
 
 ## 📝 Files
 - `logistic_regression_from_scratch.py` – Main implementation
-- `diabetes.csv` – Dataset (included in repo, download from [Kaggle](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database))
+- `diabetes.csv` – Dataset (not included in repo, download from [Kaggle](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database))
 - `README.md` – This file
 
 ---
@@ -387,3 +174,5 @@ Output: The person is diabetic
 ---
 
 *This project is for educational purposes to demonstrate the inner workings of logistic regression.*
+
+---
